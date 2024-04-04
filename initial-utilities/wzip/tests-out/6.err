@@ -1,2 +1,0 @@
-realloc(): invalid next size
-../../tester/run-tests.sh: line 27:  7341 Aborted                 ./wzip tests/6.in
