@@ -45,26 +45,22 @@ int main(int argc, char *argv[]){
 		}
 		fclose(fp);
 	}
-	// zipping
-	//size_t str_len = strlen(str);
 	size_t len = 0;
 	for(int i=0; str[i]; i++){
 		len++;
 	}
-	Tuple *chars = calloc(len, sizeof(Tuple));
+	int count;
+	char c;
  	for(size_t i=0; i<len; i++){
- 		Tuple t = {character: str[i], count: 1};
+		count = 1;
+		c = str[i];
  		while(i+1 < len && str[i] == str[i+1]){
-			t.count++;
+			count++;
  			i++;
  		}
-		*(chars+chars_size++) = t;
- 	}
-	 //printing output
- 	for(int i = 0; i < chars_size; i++){
- 		Tuple *t = chars+i;
- 		fwrite(&(t->count), sizeof(int), 1, stdout);
- 		fwrite(&(t->character), sizeof(char), 1, stdout);
+		//printing the output
+ 		fwrite(&count, sizeof(int), 1, stdout);
+ 		fwrite(&c, sizeof(char), 1, stdout);
  	}
 	return 0;
 }
